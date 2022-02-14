@@ -8,7 +8,7 @@ $handle = fopen($filename, "rb");
 
 while(!feof($handle)) {
     $ligne = fgets($handle);
-    echo "Ligne : " . $ligne . "<br />";
+    echo "Ligne : " . $ligne . " Valeur point : " . ftell($handle) . "<br />";
 }
 
 fclose($handle);
