@@ -3,12 +3,8 @@ spl_autoload_register(function($className) {
     include './classes/' . $className . '.php';
 });
 
-$filename = "./files/corbeau.txt";
-$handle = fopen($filename, "rb");
+file_put_contents('./files/toto.txt', 'Ecriture dans fichier');
 
-while(!feof($handle)) {
-    $ligne = fgets($handle);
-    echo "Ligne : " . $ligne . " Valeur point : " . ftell($handle) . "<br />";
-}
-
-fclose($handle);
+$contenu = file_get_contents('./files/toto.txt');
+$contenu .= "\nLa suite du fichier";
+file_put_contents('./files/toto.txt', $contenu);
