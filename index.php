@@ -3,10 +3,9 @@ spl_autoload_register(function($className) {
     include './classes/' . $className . '.php';
 });
 
-file_put_contents('./files/toto.txt', 'Ecriture dans fichier');
+$fichier = fopen('./files/ecriture.txt', 'c+b');
 
-$contenu = file_get_contents('./files/toto.txt');
-$contenu .= "\nLa suite du fichier";
-file_put_contents('./files/toto.txt', $contenu, FILE_APPEND);
+fwrite($fichier, "Une ligne de commentaire bidon");
+fwrite($fichier, "\nUne autre ligne de commentaire bidon");
 
-Log::write('Erreur');
+fclose($fichier);
