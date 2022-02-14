@@ -6,7 +6,7 @@ spl_autoload_register(function($className) {
 $filename = "./files/corbeau.txt";
 $handle = fopen($filename, "rb");
 
-echo "Ligne 1 : " . fgets($handle) . "<br />";
-echo "Ligne 2 : " . fgets($handle) . "<br />";
+echo "Ligne 1 : " . fgetc($handle) . "<br />";
+echo "Ligne 2 : " . fgetc($handle) . "<br />";
 
 fclose($handle);
