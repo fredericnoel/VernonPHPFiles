@@ -3,14 +3,10 @@ spl_autoload_register(function($className) {
     include './classes/' . $className . '.php';
 });
 
-/*$filename = "./files/corbeau.txt";
-$handle = fopen($filename, "r");
-// filesize() renvoie la longueur du fichier
-$contents = fread($handle, 1);
+$filename = "./files/corbeau.txt";
+$handle = fopen($filename, "rb");
+
+echo "Ligne 1 : " . fgets($handle) . "<br />";
+echo "Ligne 2 : " . fgets($handle) . "<br />";
+
 fclose($handle);
-
-var_dump($contents);
-*/
-
-$test = new File("./files/corbeau.txt", "r");
-var_dump($test->lecture());
