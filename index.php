@@ -6,7 +6,7 @@ spl_autoload_register(function($className) {
 /*$filename = "./files/corbeau.txt";
 $handle = fopen($filename, "r");
 // filesize() renvoie la longueur du fichier
-$contents = fread($handle, filesize($filename));
+$contents = fread($handle, 1);
 fclose($handle);
 
 var_dump($contents);
